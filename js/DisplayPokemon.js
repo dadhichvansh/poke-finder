@@ -2,22 +2,16 @@ import { createPokemonCard } from "./CreatePokemonCard.js";
 
 // display pokemon data
 export const displayPokemon = (data) => {
-  const pokemon = data.map((pokemon) => ({
-    name: pokemon.name,
-    type: pokemon.types[0].type.name,
-    height: pokemon.height,
-    weight: pokemon.weight,
-    speed: pokemon.stats[0].base_stat,
-    experience: pokemon.base_experience,
-    attack: pokemon.stats[1].base_stat,
-    ability: pokemon.abilities[0].ability.name,
-    image: pokemon.sprites.other.dream_world.front_default,
-  }));
-
   // select the container
   const container = document.querySelector(".container");
 
-  pokemon.forEach((pokemon) => {
+  // error state handling
+  if (data.length === 0) {
+    container.innerHTML = "<h1>No Pokémon found!</h1>";
+    return;
+  }
+
+  data.forEach((pokemon) => {
     const card = document.createElement("div");
     card.classList.add("pokemon-card");
 
