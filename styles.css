@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
 }
 
 html,
@@ -12,103 +11,153 @@ body {
 }
 
 body {
-    text-align: center;
-    background-color: #ddd7d7;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e3d9d9;
+    color: #333;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header input {
-    padding: 5px;
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 50%;
+    max-width: 450px;
     border: none;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 1.2rem;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    outline: none;
 }
 
 header button {
-    padding: 5px 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
     border: none;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 1.2rem;
-    background-color: #fff;
-    color: #333;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #FFC300;
+    color: #FFF;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: #FF5733;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 100%;
-    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.item {
-    width: 300px;
-    height: auto;
-    padding: 15px;
-    border-radius: 6px;
-    color: #222;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+.pokemon-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.item:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-out;
-    cursor: pointer;
-}
-
-.pokemon-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    max-width: 180px;
+.pokemon-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .pokemon-image img {
-    /* width: 100%; */
-    height: 150px;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #F7F7F7;
 }
 
 .pokemon-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+    padding: 15px;
+    text-align: center;
+    background: #FFCC00;
+    color: #222;
 }
 
-.pokemon-type {
-    background-color: #5cc94b;
-    color: #fff;
-    padding: 0.4rem;
-    border-radius: 13px;
+.pokemon-info h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.pokemon-info p {
+    font-size: 1rem;
+    margin: 5px 0;
 }
 
 .pokemon-details {
     display: grid;
-    display: -ms-grid;
-    display: -moz-grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 15px;
+    gap: 8px;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
 }
 
 .pokemon-details span {
-    font-weight: 600;
+    font-weight: bold;
+    color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    header input[type="text"] {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    header button {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header input[type="text"] {
+        width: 53%;
+        font-size: 0.9rem;
+    }
+
+    header button {
+        font-size: 0.9rem;
+    }
+
+    .pokemon-card {
+        font-size: 0.8rem;
+    }
+
+    .pokemon-info h2 {
+        font-size: 1.2rem;
+    }
 }
