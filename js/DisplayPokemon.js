@@ -4,6 +4,7 @@ import { createPokemonCard } from "./CreatePokemonCard.js";
 export const displayPokemon = (data) => {
   // select the container
   const container = document.querySelector(".container");
+  container.innerHTML = ""; // clear the container
 
   // error state handling
   if (data.length === 0) {
