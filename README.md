@@ -38,6 +38,8 @@ project-folder/
 │   ├── FetchPokemon.js       # Fetches Pokémon data from the API
 │   ├── DisplayPokemon.js     # Handles displaying Pokémon cards
 │   ├── CreatePokemonCard.js  # Creates individual Pokémon card elements
+├── screenshots/
+    ├── PokemonSnippet.png
 └── README.md                 # Project documentation
 ```
 
